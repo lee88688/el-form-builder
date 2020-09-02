@@ -1,4 +1,4 @@
-import FormBuilder from './formbuilder'
+import FormBuilder from './formbuilder.vue'
 
 const install = function installFormBuilder (Vue) {
   Vue.component('el-form-builder', FormBuilder)

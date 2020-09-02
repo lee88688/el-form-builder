@@ -1,12 +1,6 @@
 {
   "presets": [
-    [
-      "env",
-      {
-        "modules": false
-      }
-    ],
-    "stage-2"
-  ],
-  "plugins": ["external-helpers"]
+    ["@babel/env", { "modules": false }],
+    "@vue/app"
+  ]
 }
