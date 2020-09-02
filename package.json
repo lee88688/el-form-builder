@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codetrial/element-form-builder.git"
+    "url": "git+https://github.com/lee88688/el-form-builder.git"
   },
   "keywords": [
     "vue",
@@ -25,9 +25,9 @@
   "author": "felixpy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codetrial/element-form-builder/issues"
+    "url": "https://github.com/lee88688/el-form-builder/issues"
   },
-  "homepage": "https://github.com/codetrial/element-form-builder#readme",
+  "homepage": "https://github.com/lee88688/el-form-builder#readme",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.3",
