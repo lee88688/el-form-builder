@@ -1,9 +1,0 @@
-{
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "sourceType": "module",
-    "allowImportExportEverywhere": false,
-    "codeFrame": false
-  },
-  "extends": ["plugin:vue/recommended", "eslint:recommended"]
-}

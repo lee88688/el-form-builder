@@ -122,7 +122,7 @@ export default {
       return new Promise(resolve => {
         const fn = async () => {
           const getItemsResult = this.asyncGetItemsResult && this.asyncGetItemsResult[name]
-          const { detail: { asyncItems }} = this.findElement(name)
+          const { detail: { asyncItems } } = this.findElement(name)
           const asyncItemsIsFunction = isFunction(asyncItems)
           // 选项中asyncItems必须为函数，asyncItems已经执行完成
           // 如果asyncGetItemsOnCreated或者formValues有值才开始等待
@@ -135,6 +135,7 @@ export default {
             // 如果asyncItems为一个函数那才会有异步的情况，否则为同步。
             await getItemsResult
           }
+          // eslint-disable-next-line standard/no-callback-literal
           if (isFunction(callback)) callback(this, this.formValues, name)
           // 同步的情况下，首次调用mergeValues时formValues为undefined
           resolve(this.formValues && this.formValues[name])
@@ -148,7 +149,7 @@ export default {
       const { model } = vm
       const defaultValues = {}
 
-      this.config.elements.forEach(({ tag, detail = {}}) => {
+      this.config.elements.forEach(({ tag, detail = {} }) => {
         // eslint-disable-next-line prefer-const
         let { defaultValue = null, name } = detail
 
@@ -205,7 +206,7 @@ export default {
       this.asyncGetItemsResult = this.asyncGetItemsResult || {}
       this.config.elements.forEach(({ detail }) => {
         const fn = async () => {
-          if (isFunction(detail.asyncItems) && (nameMap['_all'] || nameMap[detail.name])) {
+          if (isFunction(detail.asyncItems) && (nameMap._all || nameMap[detail.name])) {
             // console.log(detail.name, 'await before')
             const items = await detail.asyncItems.call(this, this.formValues)
             // console.log(detail.name, 'await after')
@@ -226,7 +227,7 @@ export default {
       const { formValues, size } = vm
       // 如果存在condition函数并且返回为true才渲染该item
       if (isFunction(condition) && condition.call(vm, formValues) !== true) return
-      const { name, input, on, style = {}, className = {}} = detail
+      const { name, input, on, style = {}, className = {} } = detail
       const value = formValues[name] !== undefined ? formValues[name] : null // change undefined to null, others not
       // slots can be a function which returns an array or an array
       let slots
@@ -273,7 +274,7 @@ export default {
               ...modelEvents
             },
             style,
-            'class': className,
+            class: className,
             scopedSlots
           },
           (detail.items || []).map(option => {
@@ -304,7 +305,7 @@ export default {
               ...modelEvents
             },
             style,
-            'class': className
+            class: className
           },
           (detail.items || []).map(option => {
             return h(
@@ -345,7 +346,7 @@ export default {
                 ...modelEvents
               },
               style,
-              'class': className
+              class: className
             },
             [option.text]
           )
@@ -364,7 +365,7 @@ export default {
             ...modelEvents
           },
           style,
-          'class': className,
+          class: className,
           scopedSlots
         }, slots || [])
         children = [input]
@@ -417,7 +418,7 @@ export default {
     resetFields () {
       // this.$refs.form && this.$refs.form.resetFields()
       const defaultValues = {}
-      this.config.elements.forEach(({ tag, detail = {}}) => {
+      this.config.elements.forEach(({ tag, detail = {} }) => {
         // eslint-disable-next-line prefer-const
         let { defaultValue = null, name } = detail
 
@@ -462,7 +463,7 @@ export default {
         ref: 'form'
       },
       [
-        h('el-row', { props: { type: 'flex', gutter: this.rowGutter }}, children)
+        h('el-row', { props: { type: 'flex', gutter: this.rowGutter } }, children)
       ]
     )
   }
