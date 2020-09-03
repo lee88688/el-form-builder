@@ -10,6 +10,7 @@
   "scripts": {
     "build": "vue-cli-service build --target lib src/index.js",
     "test:unit": "vue-cli-service test:unit",
+    "test:debug": "node --inspect-brk node_modules/.bin/vue-cli-service test:unit --no-cache --watch --runInBand",
     "lint": "vue-cli-service lint"
   },
   "repository": {
