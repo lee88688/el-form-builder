@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "test": "yarn test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,24 +28,35 @@
     "url": "https://github.com/lee88688/el-form-builder/issues"
   },
   "homepage": "https://github.com/lee88688/el-form-builder#readme",
-  "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.11.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.11.5",
     "@babel/eslint-parser": "^7.11.5",
+    "@babel/plugin-transform-regenerator": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/polyfill": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@rollup/plugin-babel": "^5.2.0",
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@vue/babel-preset-app": "^4.5.4",
-    "@vue/compiler-sfc": "^3.0.0-rc.9",
     "@vue/eslint-plugin": "^4.2.0",
+    "@vue/test-utils": "^1.0.5",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^26.3.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-vue": "^2.0.2",
+    "core-js": "2",
+    "element-ui": "^2.13.2",
     "eslint": "^7.8.1",
+    "jest": "^26.4.2",
+    "regenerator-runtime": "^0.13.7",
     "rollup": "^2.26.9",
     "rollup-plugin-css-only": "^2.1.0",
     "rollup-plugin-vue": "^5.1.9",
     "vue": "^2.6.12",
+    "vue-jest": "^3.0.6",
     "vue-template-compiler": "^2.6.12"
   }
 }

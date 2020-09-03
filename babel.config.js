@@ -1,0 +1,33 @@
+module.exports = {
+  "presets": [
+    "@vue/app",
+    [
+      "@babel/preset-env"
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ],
+      plugins: [
+        [
+          "transform-runtime",
+          {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }
+        ]
+      ]
+    }
+  }
+}
