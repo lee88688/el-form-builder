@@ -9,11 +9,10 @@
       </div>
       <el-row :gutter="24">
         <el-col :span="8">
-          <el-form-builder :config="formConfig" v-model="formValues" label-width="80px">
-            <div slot="append" class="submit-item">
-              <el-button type="primary" @click="showResultModal = true">提交</el-button>
-            </div>
-          </el-form-builder>
+          <el-form-builder :config="formConfig" v-model="formValues" label-width="80px" />
+          <div slot="append" class="submit-item">
+            <el-button type="primary" @click="showResultModal = true">提交</el-button>
+          </div>
         </el-col>
         <el-col :span="8">
           <el-input v-model="config.elements" type="textarea" rows="24"></el-input>

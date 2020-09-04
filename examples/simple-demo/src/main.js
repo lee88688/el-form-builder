@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
-import FormBuilder from 'builder'
+import FormBuilder from 'el-form-builder/src/index'
 import 'element-ui/lib/theme-chalk/index.css'
 import App from './App.vue'
 
