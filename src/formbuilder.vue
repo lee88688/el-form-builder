@@ -2,7 +2,8 @@
 function isFunction (functionToCheck) {
   return (
     !!functionToCheck &&
-    Object.prototype.toString.call(functionToCheck) === '[object Function]'
+    (Object.prototype.toString.call(functionToCheck) === '[object Function]' ||
+      typeof functionToCheck === 'function')
   )
 }
 
@@ -208,7 +209,7 @@ export default {
         const fn = async () => {
           if (isFunction(detail.asyncItems) && (nameMap._all || nameMap[detail.name])) {
             // console.log(detail.name, 'await before')
-            const items = await detail.asyncItems.call(this, this.formValues)
+            const items = await detail.asyncItems.call(this, this.formValues, detail.name)
             // console.log(detail.name, 'await after')
             this.$set(detail, 'items', items)
           }
@@ -240,7 +241,7 @@ export default {
       if (isFunction(detail.scopedSlots)) {
         scopedSlots = detail.scopedSlots.call(this, h)
       } else {
-        scopedSlots = detail.scopedSlots || []
+        scopedSlots = detail.scopedSlots || {}
       }
       // events
       const customEvents = {}

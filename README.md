@@ -25,15 +25,15 @@ vue create --preset codetrial/vue-cli-plugin-element your-project
 ### Install
 
 ```bash
-yarn add element-form-builder
+yarn add el-form-builder
 # OR
-npm i element-form-builder
+npm i el-form-builder
 ```
 
 ### Registry
 
 ```javascript
-import FormBuilder from 'element-form-builder'
+import ElFormBuilder from 'el-form-builder'
 
 Vue.use(FormBuilder)
 ```

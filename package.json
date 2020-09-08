@@ -2,15 +2,14 @@
   "name": "el-form-builder",
   "version": "1.2.0",
   "description": "Build element-ui forms with JSON schema.",
-  "main": "dist/el-form-builder.esm.js",
+  "main": "src/index.js",
   "files": [
     "src",
     "dist"
   ],
   "scripts": {
     "build": "vue-cli-service build --target lib src/index.js",
-    "test:unit": "vue-cli-service test:unit",
-    "test:debug": "node --inspect-brk node_modules/.bin/vue-cli-service test:unit --no-cache --watch --runInBand",
+    "test": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "repository": {
